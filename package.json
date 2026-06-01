@@ -1,0 +1,30 @@
+{
+  "name": "pw-todo-agentic-taf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:chromium": "playwright test --project=chromium",
+    "test:chromium:headed": "playwright test --project=chromium --headed",
+    "test:chromium:debug": "playwright test --project=chromium --debug",
+    "test:firefox": "playwright test --project=firefox",
+    "test:firefox:headed": "playwright test --project=firefox --headed --workers=1",
+    "test:firefox:debug": "playwright test --project=firefox --debug",
+    "test:webkit": "playwright test --project=webkit",
+    "test:webkit:headed": "playwright test --project=webkit --headed --workers=1",
+    "test:webkit:debug": "playwright test --project=webkit --debug",
+    "test:report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "dotenv": "^17.4.2"
+  }
+}
