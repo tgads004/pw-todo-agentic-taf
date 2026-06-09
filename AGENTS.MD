@@ -121,4 +121,4 @@ Results posted back to source PR
 5. **Page Object Model mandatory** - No raw selectors in tests
 6. **Data cleanup required** - Every test cleans up created data
 7. **Tests are generated** - Not manually written (except overrides)
-8. **Plain text markdown** - No emojis in generated markdown files
+8. **Plain text markdown** - no emojis or special Unicode characters, Follow conventional markdown syntax
