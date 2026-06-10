@@ -1,0 +1,42 @@
+# Skill: Probe API Endpoint
+
+## Input
+
+- `method`: HTTP method (GET, POST, PUT, DELETE)
+- `path`: URL path (e.g., /api/todos)
+- `api_url`: Base URL of the API (e.g., <http://localhost:3000>)
+- `sample_body` (optional): JSON body to send for POST/PUT requests
+
+## Process
+
+1. Construct the full URL by combining `api_url` and `path`
+2. Send an HTTP request with the given method
+3. If method is POST or PUT, include a sample JSON body:
+   - For todos: `{ "title": "Test Todo Item", "description": "Created by explorer" }`
+   - For other resources, infer from plural context or send an empty object `{}`
+4. Capture the following:
+   - Response status code
+   - Response body (parsed as JSON if possible, otherwise raw text)
+   - Response headers
+   - If the request fails, capture the error message
+
+## Output
+
+Return a JSON object:
+
+```json
+{
+  "method": "POST",
+  "path": "/api/todos",
+  "status": 201,
+  "responseBody": { "id": "abc123", "title": "Test Todo Item" },
+  "headers": { "content-type": "application/json" },
+  "error": null
+}
+```
+
+## Rules
+
+- Do not modify existing data unless the test scenario requires it
+- If a DELETE endpoint is probed, note the deleted ID for potential cleanup
+- Timeout after 5 seconds per endpoint
